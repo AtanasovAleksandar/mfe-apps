@@ -5,19 +5,19 @@ yarn installed in you computer
 
 How to start this app:
 
-1. open cmd and navigate to root folder 
+1. open cmd and navigate to "root app" folder then run
   - yarn install
   - yarn start
-2. open new cmd and navigate to navbar 
+2. open new cmd and navigate to "navbar app" folder then run
   - yarn install
   - yarn start
-3. open new cmd and navigate to react-list
+3. open new cmd and navigate to "react-list app" folder then run
   -yarn install
   -yarn start
-4.open new cmd and navigate to angular-list\user-list
-  -npm install
-  -npm run serve:single-spa:user-list
+4.open new cmd and navigate to "angular-list\user-list" folder then
+  "npm install" then
+  "npm run serve:single-spa:user-list"
   
- (note) all four app need to run in same time!
+ (note) all four apps need to run in same time!
  
  open http://localhost:9000/
