@@ -19,6 +19,6 @@ How to start this app:
   - [x] `npm install` 
   - [x] `npm run serve:single-spa:user-list`
   
- (note) all four apps need to be runed at the same time! don't close previously opened cmd where you apps are already started!
+ (note) all four apps need to be runed at the same time! do not close previously opened cmd where you apps are already started!
  
  open http://localhost:9000/ :+1:
