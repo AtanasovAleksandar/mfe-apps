@@ -17,8 +17,13 @@ const UsersList: Users[] = [{
     "details": "Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus."
   }, {
     "id": 4,
-    "name": "Jayme",
+    "name": "Janme",
     "age": 47,
+    "details": "Ut tellus. Nulla ut erat id mauris vulputate elementum."
+  }, {
+    "id": 43,
+    "name": "Jana",
+    "age": 27,
     "details": "Ut tellus. Nulla ut erat id mauris vulputate elementum."
   }, {
     "id": 25,

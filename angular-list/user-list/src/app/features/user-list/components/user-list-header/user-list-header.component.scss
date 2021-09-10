@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+.user-list-title {
+    width: 100%;
+    font-size: 1.5rem;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+.user-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  &__filed-container {
+    display: flex;
+    flex-direction: column;
+}
+::ng-deep .mat-form-field-wrapper {
+    margin: 0;
+    padding-bottom: 5px;
+    background: white;
+  }
+
+  &__button {
+    width: 150px;
+    height: 55px;
+  }
+  
+  &__desc {
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+  }
+  &__icon {
+    color: white;
+  }
+  &__sort-text {
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 10px;
+  }
+}

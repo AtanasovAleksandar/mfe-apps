@@ -1,0 +1,14 @@
+<h5 class="user-list-title">Angular Users List</h5>
+<div class="user-list-header">
+    <div class="user-list-header__filed-container">
+        <mat-form-field class="user-search__filed" appearance="outline">
+            <mat-label>Filter user by name</mat-label>
+            <input class="user-list-header__input" type="text" matInput [(ngModel)]="searchValue"
+            placeholder="Type to search user" (ngModelChange)="onSearchChange($event)">
+        </mat-form-field>
+    </div>
+    <div>
+        <p class="user-list-header__sort-text">Sort users List</p>
+        <mat-slide-toggle (change)="onSortClick()">Sort Asc</mat-slide-toggle>
+    </div>
+</div>

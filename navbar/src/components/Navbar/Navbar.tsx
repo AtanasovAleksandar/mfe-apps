@@ -1,7 +1,7 @@
 import React from 'react'
 import { useHistory } from "react-router-dom";
 
-import "./Navbar.scss";
+import "./Navbar.css";
 
 const Navbar: React.FC = () => {
     let history = useHistory();
@@ -42,7 +42,7 @@ const Navbar: React.FC = () => {
                     </svg>
 
                 </div>
-                <h2>Resources</h2>
+                <h2>MFE APPS</h2>
                 <p>Choice one of bellow apps</p>
                 <div className="card-container">
                     <a className="card" onClick={() => navigateToReact()}>

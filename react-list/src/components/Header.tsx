@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { TextField, Typography, Button, Box } from '@material-ui/core';
+import { TextField, Typography, Button, Box, Switch } from '@material-ui/core';
 
 const useStyles = makeStyles({
     headerContainer: {
@@ -51,25 +51,24 @@ const Header: React.FC<Header> = ({ valueForFilter, sortUserByAge }) => {
             </Typography>
             <Box className={classes.header}>
                 <TextField
-                    className={classes.input}
+                    classes={{root: classes.input}}
                     id="outlined-basic"
-                    label="Filter Users by Name"
+                    label="Filter users by name"
                     placeholder="Type a name..."
                     variant="outlined"
                     value={filterValue}
                     onChange={(event) => handleFilterValueChange(event.target.value)}
                 />
+                <div>
                 <Typography className={classes.desc}>
-                    Тo find a user you need to enter the full name
-                </Typography>
-                <Button
-                    className={classes.filterButton}
-                    variant="contained"
-                    color="primary"
-                    onClick={() => sortUserByAge()}
-                >
-                    Sort by age
-                </Button>
+                    Sort users List
+                </Typography> 
+                <Switch 
+                    inputProps={{ 'aria-label': 'primary checkbox' }} 
+                    onChange={() => sortUserByAge()}  
+                />
+                   <span>Sort ASC</span>
+                </div>
             </Box>
         </div>
     )

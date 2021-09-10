@@ -10,50 +10,55 @@ const useStyles = makeStyles({
 	container: {
 		margin: '30px',
 	},
+	usersFound: {
+		fontWeight: 700,
+		fontSize: '18px',
+		marginBottom: '20px',
+		border: '1px solid',
+		padding: '5px',
+		width: '200px',
+	}
 });
 
 const UserList: React.FC = () => {
 	const classes = useStyles();
 	const [users, setUsers] = useState<Users[]>([]);
 	const [showNoResults, setShowNoResults] = useState<boolean>(false);
+	const [isSortAsc, setIsSortAsc] = useState<boolean>(true);
+	const [isSearched, setIsSearched] = useState<boolean>(false);
 
 	const filterUsers = (value): void => {
-		let result = null;
+		let filtered;
 		if (value.length >= 3) {
-			result = usersFilter(value)
-		}
-		if (result) {
-			setUsers([result]);
-			setShowNoResults(false);
-		}
+			setIsSearched(true);
+			filtered = users.filter((data: any) => {
+				setShowNoResults(false);
+				return JSON.stringify(data).toLowerCase().includes(value);
+			  });
+			  setUsers(filtered);
 
-		if (!result && value.length >= 3) {
-			setShowNoResults(true);
+			  if (filtered.length === 0) {
+				  setShowNoResults(true);
+				  setIsSearched(false);
+			  }
 		}
+		  if (!filtered && value.length < 3) {
+			  getUsersList()
+			  setIsSearched(false);
+			  setShowNoResults(false);
 
-		if (value.length === 0) {
-			setShowNoResults(false);
-			getUsersList();
-		}
-	}
-
-	const usersFilter = (value) => {
-		const filterUsers = users.find(user => {
-			return user.name.toLowerCase() === value.toLowerCase()
-		});
-		return filterUsers;
+		  }
 	}
 
 	const sortByAge = () => {
-		const sortedArray =	users.sort((a, b) => {
-			if ( a.age < b.age ){
-				return -1;
-			}
-			if ( a.age > b.age ){
-				return 1;
-			}
-			return 0;
-		});
+		setIsSortAsc(!isSortAsc);
+		const updatedUsers = [...users];
+		let sortedArray;
+		if (isSortAsc) {
+			sortedArray = updatedUsers.sort((a, b) => (a.age > b.age) ? 1 : -1)
+		} else {
+			sortedArray = updatedUsers.sort((a, b) => (a.age < b.age) ? 1 : -1)
+		}
 		setUsers(sortedArray);
 	}
 
@@ -81,6 +86,11 @@ const UserList: React.FC = () => {
 				valueForFilter={(val) => filterUsers(val)}
 				sortUserByAge={() => sortByAge()}
 			/>
+			{isSearched && (
+			<div>
+    			<Typography className={classes.usersFound}>Users found: {users.length}</Typography>
+			</div>
+			)}
 			<div>
 				{showNoResults ? (
 					<Typography>

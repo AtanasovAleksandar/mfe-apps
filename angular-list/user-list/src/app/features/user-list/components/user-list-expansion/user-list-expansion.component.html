@@ -1,0 +1,26 @@
+<ng-container *ngIf="(users | searchFilter: term) as result">
+  <ng-container *ngIf="term.length >=3" >
+    <p class="user-list-expansion__count">Users found: {{result.length}}</p>
+  </ng-container>
+<mat-accordion *ngFor="let user of result">
+    <mat-expansion-panel 
+        (opened)="panelOpenState = true"
+        (closed)="panelOpenState = false"
+        class="user-list-expansion__panel"
+        >
+      <mat-expansion-panel-header>
+        <mat-panel-title class="user-list-expansion__name">
+         <strong>Name: </strong>{{user.name}}
+        </mat-panel-title>
+        <mat-panel-description class="user-list-expansion__desc">
+        <strong>Age: </strong> {{user.age}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <strong>Description: </strong><p>{{user.details}}</p>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <ng-container *ngIf="result.length === 0">
+    results are empty
+  </ng-container>
+
+</ng-container>

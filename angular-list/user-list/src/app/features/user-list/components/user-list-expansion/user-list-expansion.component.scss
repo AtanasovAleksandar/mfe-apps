@@ -1,0 +1,20 @@
+.user-list-expansion {
+    &__panel {
+        margin-bottom: 10px!important;
+    }
+    &__name {
+        width: 300px;
+    }
+    &__desc {
+        width: 300px;
+        color: black;
+    }
+    &__count {
+        font-weight: 700;
+        font-size: 18px;
+        margin-bottom: 20px;
+        border: 1px solid;
+        padding: 5px;
+        width: 200px;
+    }
+}

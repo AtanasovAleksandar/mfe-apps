@@ -1,0 +1,6 @@
+<div class="user-list-container">
+  <app-user-list-header (sortByAge)="sortUsersByAge()">
+  </app-user-list-header>
+  <app-user-list-expansion [users]="users" (getAllUsers)="getUsers()">
+  </app-user-list-expansion>
+</div>
