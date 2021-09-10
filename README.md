@@ -1,11 +1,11 @@
 # mfe-apps
 
-in order to start this app you need to have node version >12 (best to use version v14.15.3)
+in order to start this app you need to have node version >12 (best to use version v14.15.3) and 
 yarn installed in you computer
 
-how to start this app
+How to start this app:
 
-1. Go open cmd and navigate to root folder 
+1. open cmd and navigate to root folder 
   - yarn install
   - yarn start
 2. open new cmd and navigate to navbar 
