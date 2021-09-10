@@ -1,6 +1,6 @@
 # mfe-apps
 
-in order to start this app you need to have 
+In order to start this app you need to have:  
 - > node version >12 (best to use version v14.15.3) 
 - > yarn installed in you computer
 
